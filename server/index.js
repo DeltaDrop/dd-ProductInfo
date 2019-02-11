@@ -11,8 +11,8 @@ app.use('/', router);
 
 // app.get('/api/:prod_name', (req, res) => {
 //   let prod_name = req.params.prod_name;
-//   let q = `select name, price, sale_price, number_of_reviews, average_score, unix_timestamp(deal_ends) as time, units_sold, shipping_option, drop_count 
-//   from items where items.name = '${prod_name}'`
+  // let q = `select name, price, sale_price, number_of_reviews, average_score, unix_timestamp(deal_ends) as time, units_sold, shipping_option, drop_count 
+  // from items where items.name = '${prod_name}'`
 //   db.connection.query(q, (err, results) => {
 //     if (err) {
 //       if (err.message === '404') res.status(404).send(err);

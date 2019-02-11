@@ -4,20 +4,28 @@ const models = require('./models.js');
 module.exports = {
   item: {
     get: function(req, res) {
-      console.log('inside item get');
-      console.log('item is: ', req.params.prod_name)
+      models.item.get(req.params.prod_name, (err, results) => {
+        if (err) console.log('error in models item get: ', err);
+        else res.send(results);
+      })
     }
   },
 
   categories: {
     get: function(req, res) {
-      console.log('inside categories get');
+      models.categories.get(req.params.prod_name, (err, results) => {
+        if (err) console.log('error in models categories get: ', err);
+        else res.send(results);
+      })
     }
   },
 
   drop: {
     post: function(req, res) {
-      console.log('inside drop post');
+      models.drop.post(req.body, (err) => {
+        if (err) console.log('error in models drop post: ', err);
+        else res.sendStatus(201);
+      })
     }
   },
 
