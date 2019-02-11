@@ -2,10 +2,12 @@ var express = require('express');
 var parser = require('body-parser');
 var db = require('../db/index.js');
 var path = require('path');
+var router = require('./routes');
 
 let app = express();
 app.use(parser.json());
 app.use(express.static(__dirname + '/../react-client/dist'));
+app.use('/', router);
 
 app.get('/api/:prod_name', (req, res) => {
   let prod_name = req.params.prod_name;
